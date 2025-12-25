@@ -1,0 +1,98 @@
+{
+  "description": "Unified schema for real launch vehicles and fictional spacecraft",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string",
+      "desc": "Vehicle or ship name"
+    },
+    {
+      "name": "universe",
+      "type": "enum",
+      "values": [
+        "Real",
+        "Fiction"
+      ]
+    },
+    {
+      "name": "franchise",
+      "type": "string",
+      "desc": "Fictional franchise when universe=Fiction"
+    },
+    {
+      "name": "class_or_variant",
+      "type": "string",
+      "desc": "Model or class name"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "desc": "Launch Vehicle or Starship (fictional)"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "desc": "Operational status or N/A for fiction"
+    },
+    {
+      "name": "first_flight_or_era",
+      "type": "string|number",
+      "desc": "First flight year or narrative era"
+    },
+    {
+      "name": "mass_liftoff_kg",
+      "type": "number|null"
+    },
+    {
+      "name": "thrust_liftoff_kN",
+      "type": "number|null"
+    },
+    {
+      "name": "tw_liftoff",
+      "type": "number|null",
+      "desc": "Liftoff thrust-to-weight if computable"
+    },
+    {
+      "name": "payload_leo_kg",
+      "type": "number|null"
+    },
+    {
+      "name": "payload_gto_kg",
+      "type": "number|null"
+    },
+    {
+      "name": "payload_other",
+      "type": "string|null",
+      "desc": "Description of payload class for fiction"
+    },
+    {
+      "name": "propulsion_or_drive",
+      "type": "string",
+      "desc": "Propellants for real; FTL/sub-light drive for fiction"
+    },
+    {
+      "name": "engine_or_drive_model",
+      "type": "string",
+      "desc": "Engine names or drive labels"
+    },
+    {
+      "name": "energy_source",
+      "type": "string",
+      "desc": "For real: propellant; for fiction: energy/fuel"
+    },
+    {
+      "name": "cost_estimate",
+      "type": "string|null"
+    },
+    {
+      "name": "destinations",
+      "type": "string",
+      "desc": "Typical mission destinations or reach"
+    },
+    {
+      "name": "notes",
+      "type": "string|null"
+    }
+  ],
+  "preferred_format": "JSONL for LLM ingestion; CSV for spreadsheets"
+}
