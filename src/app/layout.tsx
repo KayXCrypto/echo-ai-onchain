@@ -1,5 +1,3 @@
-'use client';
-
 import Header from '@/app/_components/header';
 import { Providers } from '@/providers';
 import { Geist, Geist_Mono } from 'next/font/google';
