@@ -83,9 +83,9 @@ export default function MarketInsightClient() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 shrink-0">
           <div>
             <h1 className="text-3xl font-bold text-white bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-              AetherScope Market Analysis
+               Market Analysis
             </h1>
-            <p className="text-gray-400 text-sm">Phân tích tâm lý thị trường thời gian thực</p>
+            <p className="text-gray-400 text-sm">Real-time market sentiment analysis</p>
           </div>
         </div>
 
@@ -117,14 +117,14 @@ export default function MarketInsightClient() {
             </div>
 
             <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6">
-              <h3 className="text-white font-semibold mb-4 text-sm">Phân tích nhanh</h3>
+              <h3 className="text-white font-semibold mb-4 text-sm">Quick analysis</h3>
               <div className="space-y-4">
                 <div className="p-3 bg-white/5 rounded-lg border border-white/5">
-                  <p className="text-xs text-gray-400 mb-1">Trạng thái:</p>
+                  <p className="text-xs text-gray-400 mb-1">Status:</p>
                   <p className="text-sm text-gray-200">
                     {marketData?.value! > 50
-                      ? "Dòng tiền đang đổ vào thị trường mạnh mẽ. Cảnh báo hưng phấn quá đà."
-                      : "Thị trường đang lo sợ. Đây có thể là cơ hội tích lũy tài sản giá rẻ."}
+                      ? "Capital inflows are surging into the market. Warning: excessive market exuberance.."
+                      : "The market is fearful. This could be an opportunity to accumulate assets at discounted prices."}
                   </p>
                 </div>
               </div>
@@ -141,7 +141,7 @@ export default function MarketInsightClient() {
             <div ref={scrollRef} className="flex-1 overflow-y-auto p-4 space-y-4">
               {messages.length === 0 && (
                 <div className="h-full flex flex-col items-center justify-center text-gray-500 text-sm italic">
-                  Hãy hỏi tôi bất cứ điều gì về thị trường hôm nay...
+                  Ask me anything about today’s market...
                 </div>
               )}
               {messages.map((msg, idx) => (
@@ -157,7 +157,7 @@ export default function MarketInsightClient() {
               {isLoading && (
                 <div className="flex justify-start">
                   <div className="bg-white/10 p-3 rounded-2xl rounded-tl-none animate-pulse text-gray-400 text-xs">
-                    AI đang suy nghĩ...
+                    AI is thinking...
                   </div>
                 </div>
               )}
@@ -170,7 +170,7 @@ export default function MarketInsightClient() {
                   value={chatInput}
                   onChange={(e) => setChatInput(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
-                  placeholder="Hỏi về xu hướng BTC, ETH..."
+                  placeholder="Ask about BTC and ETH trends..."
                   className="w-full bg-white/5 border border-white/20 rounded-xl px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
                 />
                 <button

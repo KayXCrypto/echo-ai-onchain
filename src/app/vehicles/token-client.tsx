@@ -37,7 +37,7 @@ export default function TokenIntelligenceClient() {
         // Giả lập gọi AI phân tích
         setTimeout(() => {
             const scoring = Math.floor(Math.random() * 40) + 50; // Điểm ngẫu nhiên 50-90
-            const report = `[Phân tích AI]: Token ${token.symbol} có thanh khoản chiếm ${(token.liquidity / token.marketCap * 100).toFixed(1)}% vốn hóa. Tín hiệu mạng lưới ${token.network} đang tốt. Điểm tiềm năng: ${scoring}/100. Lưu ý: ${token.volume24h > 1000000 ? 'Volume cao, có thể scalping.' : 'Thanh khoản thấp, cẩn thận trượt giá.'}`;
+            const report = `[AI analysis]: Token ${token.symbol} has dominant liquidity ${(token.liquidity / token.marketCap * 100).toFixed(1)}% of market cap. Network signals on ${token.network} are strong.Potential score: ${scoring}/100.Note: ${token.volume24h > 1000000 ? 'High volume, suitable for scalping.' : 'Low liquidity, beware of slippage.'}`;
             setAiAnalysis(prev => ({ ...prev, [token.id]: report }));
             setIsAnalyzing(null);
         }, 1200);
@@ -51,7 +51,7 @@ export default function TokenIntelligenceClient() {
                     <h1 className="text-4xl font-black text-white mb-2 tracking-tight">
                         TOKEN <span className="text-blue-500">INTELLIGENCE</span>
                     </h1>
-                    <p className="text-gray-400">Danh sách token mới listing (7 ngày qua) và đánh giá rủi ro bằng AI</p>
+                    <p className="text-gray-400">List of newly listed tokens (past 7 days) and AI-based risk assessment</p>
                 </div>
 
                 {/* Token List */}
@@ -95,7 +95,7 @@ export default function TokenIntelligenceClient() {
                                                 disabled={isAnalyzing === token.id}
                                                 className="w-full py-2 bg-white text-black text-xs font-bold rounded-md hover:bg-blue-400 hover:text-white transition-all disabled:opacity-50"
                                             >
-                                                {isAnalyzing === token.id ? "ĐANG QUÉT..." : "AI SCAN TIỀM NĂNG"}
+                                                {isAnalyzing === token.id ? "Scanning..." : "AI Potential Scan"}
                                             </button>
                                         </div>
                                     </div>
@@ -114,7 +114,7 @@ export default function TokenIntelligenceClient() {
                                             </p>
                                         </div>
                                     ) : (
-                                        <p className="text-[10px] text-gray-600 uppercase text-center">Chưa có dữ liệu phân tích</p>
+                                        <p className="text-[10px] text-gray-600 uppercase text-center">**No analytical data available yet.**</p>
                                     )}
                                 </div>
                             </div>
